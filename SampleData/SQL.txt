@@ -1,0 +1,37 @@
+CREATE TABLE AGREEMENT
+(
+	agreement_Id          	SERIAL PRIMARY KEY,
+    	order_number   		varchar(100),
+    	stsystem    		varchar(100),
+    	request			integer,
+    	from_date		date,
+    	to_date			date,
+    	amount			double,
+    	amount_type		varchar(100),
+    	amount_period		varchar(100),
+    	authorization_percent	integer,
+    	active			boolean
+);
+
+INSERT INTO AGREEMENT (agreement_Id ,order_number, stsystem, request, from_date, to_date, amount, amount_type, amount_period, authorization_percent, active)
+VALUES (1, "33/2011", "ŁÓDKA", "3334", "2012-02-02", "2014-04-03", 100.00, "BRU", "MONTH", 2, true  );
+INSERT INTO AGREEMENT (agreement_Id ,order_number, stsystem, request, from_date, to_date, amount, amount_type, amount_period, authorization_percent, active)
+VALUES (2, "44/2011", "DOMEK", "3224", "2012-07-13", "2020-04-03", 100.00, "BRU", "MONTH", 2, false  );
+INSERT INTO AGREEMENT (agreement_Id ,order_number, stsystem, request, from_date, to_date, amount, amount_type, amount_period, authorization_percent, active)
+VALUES (3, "34/2011", "ROMEK", "3254", "2013-09-22", "2019-04-03", 100.00, "BRU", "MONTH", 2, false  );
+
+CREATE TABLE SYSTEMTYPE
+(
+	systemId        SERIAL PRIMARY KEY,
+    	name   		varchar(100),
+    	description    	varchar(100),
+    	technology_desc	varchar(100),
+    	owner		varchar(100)
+);
+
+INSERT INTO SYSTEMTYPE (system_id, name, description, technology_desc, owner)
+VALUES (1,"ŁÓDKA", "dobrze pływa po www", "CSS, HTML", "Bolemir");
+INSERT INTO SYSTEMTYPE (system_id, name, description, technology_desc, owner)
+VALUES (2,"DOMEK", "pisze w c", "C++", "Raczykowski");
+INSERT INTO SYSTEMTYPE (system_id, name, description, technology_desc, owner)
+VALUES (3,"ROMEK", "pisze w JAVA", "Java", "Tomek");
