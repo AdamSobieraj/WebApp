@@ -13,11 +13,14 @@ import java.util.stream.Collectors;
 @Service
 public class SaveCSVToDb {
 
-    @Autowired
-    private DbAgreementService dbAgreementService;
+    private final DbAgreementService dbAgreementService;
 
-    @Autowired
-    private AgreementMapper agreementMapper;
+    private final AgreementMapper agreementMapper;
+
+    public SaveCSVToDb(DbAgreementService dbAgreementService, AgreementMapper agreementMapper) {
+        this.dbAgreementService = dbAgreementService;
+        this.agreementMapper = agreementMapper;
+    }
 
     public void saveData(Set<AgreementDto> agreementDtos){
 

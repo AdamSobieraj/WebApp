@@ -15,11 +15,14 @@ import static org.springframework.util.MimeTypeUtils.APPLICATION_JSON_VALUE;
 @RequestMapping("/v1/system")
 public class SystemController {
 
-    @Autowired
-    private DbSystemService dbSystemService;
+    private final DbSystemService dbSystemService;
 
-    @Autowired
-    private SystemMapper systemMapper;
+    private final SystemMapper systemMapper;
+
+    public SystemController(DbSystemService dbSystemService, SystemMapper systemMapper) {
+        this.dbSystemService = dbSystemService;
+        this.systemMapper = systemMapper;
+    }
 
     @RequestMapping(method = RequestMethod.GET, value = "getSystems")
     public List<SystemDto> getSystems(){

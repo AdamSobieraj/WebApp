@@ -6,7 +6,6 @@ import com.eik.fileIO.SaveCSVToDb;
 import com.eik.mapper.AgreementMapper;
 import com.eik.service.DbAgreementService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,17 +20,21 @@ import static org.springframework.util.MimeTypeUtils.APPLICATION_JSON_VALUE;
 @RequestMapping("/v1/agreement")
 public class AgreementController{
 
-    @Autowired
-    private DbAgreementService dbAgreementService;
+    private final DbAgreementService dbAgreementService;
+
+    private final AgreementMapper agreementMapper;
+
+    private final CSVRead csvRead;
+
+    private final SaveCSVToDb saveCSVToDb;
 
     @Autowired
-    private AgreementMapper agreementMapper;
-
-    @Autowired
-    private CSVRead csvRead;
-
-    @Autowired
-    private SaveCSVToDb saveCSVToDb;
+    public AgreementController(DbAgreementService dbAgreementService, AgreementMapper agreementMapper, CSVRead csvRead, SaveCSVToDb saveCSVToDb) {
+        this.dbAgreementService = dbAgreementService;
+        this.agreementMapper = agreementMapper;
+        this.csvRead = csvRead;
+        this.saveCSVToDb = saveCSVToDb;
+    }
 
     @RequestMapping(method = RequestMethod.GET, value = "agreements")
     public List<AgreementDto> getAgreements(){return agreementMapper.mapToAgreementDtoList(dbAgreementService.getAllAgreements());}

@@ -10,8 +10,11 @@ import java.util.List;
 @Service
 public class DbSystemService {
 
-    @Autowired
-    private SystemDao systemDao;
+    private final SystemDao systemDao;
+
+    public DbSystemService(SystemDao systemDao) {
+        this.systemDao = systemDao;
+    }
 
     public List<SystemType> getAllSystems(){return systemDao.findAll();}
 

@@ -19,13 +19,16 @@ import java.util.Set;
 @Service
 public class CSVRead {
 
-    @Autowired
-    private AdminConfig adminConfig;
+    private final AdminConfig adminConfig;
 
     private Set<AgreementDto> agreementDtoHashSet = new HashSet<>();
 
+    public CSVRead(AdminConfig adminConfig) {
+        this.adminConfig = adminConfig;
+    }
 
-        public void readCSV() throws Exception{
+
+    public void readCSV() throws Exception{
             agreementDtoHashSet.clear();
 
                 Reader reader = Files.newBufferedReader(Paths.get(adminConfig.getFolderPath()+ "/Agreements.csv"));

@@ -10,8 +10,11 @@ import java.util.List;
 @Service
 public class DbAgreementService {
 
-    @Autowired
-    private AgreementDao agreementDao;
+    private final AgreementDao agreementDao;
+
+    public DbAgreementService(AgreementDao agreementDao) {
+        this.agreementDao = agreementDao;
+    }
 
     public List<Agreement> getAllAgreements(){return agreementDao.findAll();}
 
