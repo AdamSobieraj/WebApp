@@ -1,4 +1,4 @@
-#Electronic Information of Contractors
+# Electronic Information of Contractors
 > Simple example of full front-end and back-end application
 
 ## Table of contents
@@ -49,7 +49,7 @@ To-do list:
 * Code refactor
 
 ## Status
-Project is: _finished_?
+Project is: _finished_
 
 ## Inspiration
 The project was inspired by testing purposes of checking how Apache Tiles works.
