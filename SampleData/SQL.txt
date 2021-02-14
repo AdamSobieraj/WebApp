@@ -29,9 +29,9 @@ CREATE TABLE SYSTEMTYPE
     	owner		varchar(100)
 );
 
-INSERT INTO SYSTEMTYPE (system_id, name, description, technology_desc, owner)
+INSERT INTO SYSTEMTYPE (systemId, name, description, technology_desc, owner)
 VALUES (1,"ŁÓDKA", "dobrze pływa po www", "CSS, HTML", "Bolemir");
-INSERT INTO SYSTEMTYPE (system_id, name, description, technology_desc, owner)
+INSERT INTO SYSTEMTYPE (systemId, name, description, technology_desc, owner)
 VALUES (2,"DOMEK", "pisze w c", "C++", "Raczykowski");
-INSERT INTO SYSTEMTYPE (system_id, name, description, technology_desc, owner)
+INSERT INTO SYSTEMTYPE (systemId, name, description, technology_desc, owner)
 VALUES (3,"ROMEK", "pisze w JAVA", "Java", "Tomek");

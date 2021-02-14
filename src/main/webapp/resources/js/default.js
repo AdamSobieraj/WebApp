@@ -1,3 +1,5 @@
+let port = "8080";
+let end_point = "eik_war_exploded";
 
 $(document).ready(function() {
 
@@ -6,7 +8,7 @@ $(document).ready(function() {
         $.ajax({
             type: "GET",
             dataType: "json",
-            url: 'http://localhost:8081/eik_war_exploded/v1/agreement/agreementsActive',
+            url: 'http://localhost:'+port+'/'+end_point+'/v1/agreement/agreementsActive',
             success: function(data){
                 let jsonArray = JSON.parse(JSON.stringify(data));
 
@@ -66,7 +68,7 @@ $(document).ready(function() {
         $.ajax({
             type: "GET",
             dataType: "json",
-            url: 'http://localhost:8081/eik_war_exploded/v1/agreement/agreements',
+            url: 'http://localhost:'+port+'/'+end_point+'/v1/agreement/agreements',
             success: function(data){
                 let jsonArray = JSON.parse(JSON.stringify(data));
 
@@ -127,7 +129,7 @@ $(document).ready(function() {
         $.ajax({
             type: "GET",
             dataType: "json",
-            url: 'http://localhost:8081/eik_war_exploded/v1/system/getSystems',
+            url: 'http://localhost:'+port+'/'+end_point+'/v1/system/getSystems',
             success: function(data){
                 let jsonArraySyst = JSON.parse(JSON.stringify(data));
 
@@ -181,7 +183,7 @@ $(document).ready(function() {
         $.ajax({
             type: "GET",
             dataType: "json",
-            url: 'http://localhost:8081/eik_war_exploded/v1/agreement/readcsv',
+            url: 'http://localhost:'+port+'/'+end_point+'/v1/agreement/readcsv',
             success: function(data){
                 let jsonArray = JSON.parse(JSON.stringify(data));
 
@@ -249,7 +251,7 @@ $(document).ready(function() {
         $.ajax({
             type: "GET",
             data: {},
-            url: 'http://localhost:8081/eik_war_exploded/v1/agreement/writecsvdob',
+            url: 'http://localhost:'+port+'/'+end_point+'/v1/agreement/writecsvdob',
             complete: function(data){
                 alert(data.responseText);
             }
